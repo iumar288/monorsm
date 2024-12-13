@@ -47,8 +47,8 @@ jobs:
 
     - name: Deploy to EC2
       run: |
-        scp -i ~/.ssh/aws-key.pem monorsm-0.0.1-SNAPSHOT.jar ec2-user@<EC2-PUBLIC-IP>:/home/ec2-user/
-        ssh -i ~/.ssh/aws-key.pem ec2-user@<EC2-PUBLIC-IP> << EOF
+        scp -i ~/.ssh/aws-key.pem monorsm-0.0.1-SNAPSHOT.jar ec2-user@13.60.88.222:/home/ec2-user/
+        ssh -i ~/.ssh/aws-key.pem ec2-user@13.60.88.222 << EOF
         sudo yum update -y
         sudo yum install java-17-openjdk -y
         nohup java -jar /home/ec2-user/monorsm-0.0.1-SNAPSHOT.jar > app.log 2>&1 &
